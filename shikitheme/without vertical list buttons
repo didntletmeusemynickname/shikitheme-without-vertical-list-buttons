@@ -94,7 +94,7 @@ body {
   line-height: 2em
 }
 .l-footer::before {
-  content: "shiki-theme v1.6.84-stable";
+  content: "shiki-theme v1.6.92-stable";
   display: block;
   float: left;
   position: static;
@@ -107,7 +107,7 @@ body {
   font-weight: 700
 }
 body[data-user*=':2727,'] .l-footer::before {
-  content: "shiki-theme v1.6.84-stable"
+  content: "shiki-theme v1.6.92-stable"
 }
 .l-footer::after {
   display: none
@@ -266,14 +266,24 @@ input {
   outline-width: 8px
 }
 .b-comment-info {
-  padding: 12px 0 12px 56px;
+  padding: 12px 0 12px 56px !important;
   color: var(--color-text-hint);
   font-size: 14px;
   line-height: 24px;
   text-align: left
 }
+.b-comment-info a.b-user16 {
+  padding-left: 14px;
+  margin: 0
+}
 .b-comment-info>span {
-  margin-left: 16px
+  margin: 0 3px 0 0
+}
+.b-comment-info:not(:last-child)::after {
+  margin: 11px 0 -12px 0
+}
+.b-text_with_paragraphs br {
+  margin-bottom: 4px
 }
 .b-catalog-entry-embedded .b-catalog_entry {
   margin-bottom: 0 !important
@@ -283,6 +293,9 @@ input {
 }
 .b-comment .body, .b-dialog .body, .b-message .body, .b-topic .body {
   word-break: break-word
+}
+.p-tests-show .fonts-test [class|="icon"] {
+  color: var(--color-text-hint)
 }
 body {
   --link-color: var(--color-link);
@@ -366,21 +379,24 @@ html.turbolinks-progress-bar:before, .turbolinks.turbolinks-progress-bar::before
 .b-forums .forum:hover, .b-stats_bar .stat_names:hover:before {
   background-color: var(--color-overlay-text-hovered)
 }
-.b-pages, .b-tooltipped.dotted, .b-topic, .p-topics header h1 a.reload, .p-topics-new .topic_video, .p-topics-edit .topic_video, .p-topics-create .topic_video, .p-topics-update .topic_video, .subheadline-input {
+.b-pages, .b-tooltipped.dotted, .p-topics header h1 a.reload, .p-topics-new .topic_video, .p-topics-edit .topic_video, .p-topics-create .topic_video, .p-topics-update .topic_video, .subheadline-input {
   border-color: var(--color-border)
 }
+.text-red {
+  color: var(--color-danger)
+}
 :root {
-  --font-icons-family: 'Material Icons';
+  --font-icons-family: "Material Icons";
   --font-icons-size-m: 24px;
   --font-icons-size-s: 18px
 }
 @font-face {
-  font-family: 'Material Icons';
+  font-family: "Material Icons";
   font-style: normal;
   font-weight: 400;
   src: url(https://fonts.gstatic.com/s/materialicons/v118/flUhRq6tzZclQEJ-Vdg-IuiaDsNZ.ttf) format("truetype"), url(https://fonts.gstatic.com/s/materialicons/v118/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format("woff2")
 }
-.buttons .item-save::before, .buttons .item-moderation::before, .buttons .item-preview::before, .buttons .item-unpreview::before, .buttons .item-quote::before, .buttons .item-reply::before, .buttons .item-edit::before, .buttons .item-delete::before, .buttons .item-delete-confirm::before, .buttons .item-apply::before, .buttons .item-request-confirm::before, .buttons .item-cancel::before, .buttons .item-request-reject::before, .buttons .item-delete-cancel::before, .buttons .item-moderation-cancel::before, .buttons .item-subscribe::before, .buttons .item-offtopic::before, .buttons .item-summary::before, .buttons .item-spoiler::before, .buttons .item-abuse::before, .buttons .item-ban::before, .buttons .item-ignore::before, .buttons .item-ignore.selected::before, .headline>a::before, .midheadline>a::before, .subheadline>a::before, .b-db_entry-variant-list_item>.info .b-user_rate .b-add_to_list .plus::before, .b-db_entry-variant-list_item>.info .b-user_rate .b-add_to_list .edit::before, .b-db_entry-variant-list_item>.info .b-user_rate .b-add_to_list .trigger-arrow::before, .b-forums .forum input+.link::before, .p-contests .match-day .match-link .voted::before, .p-contests .match-day .match-link .winner::before, .p-contests .match-day .match-link .loser::before, .p-contests .match-day .match-link .created::before, .p-contests .match-day .match-link .started::before, .p-contests .match-day .match-link .finished::before, .item-mobile::before, .buttons .editor-controls .b-tooltipped::before, header.head h1 a.back::before, header.head h2 a.back::before, .subheadline-buttons .item-edit::before, .profile-actions>a::before, .b-collection-filters .mylist-block .item-sign::before, .b-collection_item .delete::before, .b-collection_item .drag-handle::before, .b-image .delete::before, .b-image .confirm::before, .b-image .cancel::before, .b-image .mobile-edit::before, .b-list_switchers .switcher::before, .b-subposter-action::before, .b-user_rate .rate-show .rate-number .item-add::before, .p-animes_collection-index .pagination .link::before, .p-recommendations-index .pagination .link::before, .p-dashboards-show .v2 .headline .buttons .options::before, .p-dialogs .misc-links>a::before, .p-profiles-show .about .item-edit::before, .b-stats_bar .compatibility a[href*='/similar/']::before, .b-stats_bar .compatibility .text:first-child::before, .p-messages .mass-actions .action a::before, .p-profiles-favorites .item-back::before, .p-user_rates-index .list-lines tr.edit-form .remove::before, .p-user_rates-index .list-posters .user_rate .edit-user_rate::before, .l-top_menu-v2 .logo-container::before, .l-top_menu-v2 .icon-other::before, .l-top_menu-v2 .menu-icon::before, .l-top_menu-v2 .menu-dropdown>span::before, .l-top_menu-v2 .submenu>a::before, .l-top_menu-v2 .global-search .clear::before, .l-top_menu-v2 .global-search .search-marker::before, .l-page .menu-toggler .toggler::before, #toast-container>.toast-error::before, .tooltip-inner .close::before, .b-ban .spoiler.collapse::before, .b-log_entry .spoiler.collapse::before, .b-user_rate_log .spoiler.collapse::before, .b-achievement .gained::before, .b-achievements_notifier .achievement .content .name .icon::before, .b-add_to_list .plus::before, .b-add_to_list .edit::before, .b-add_to_list.planned .edit::before, .b-add_to_list.on_hold .edit::before, .b-add_to_list.watching .edit::before, .b-add_to_list.rewatching .edit::before, .b-add_to_list.completed .edit::before, .b-add_to_list.dropped .edit::before, .b-add_to_list .trigger-arrow::before, .b-add_to_list.expanded .trigger-arrow::before, .b-catalog_entry.planned .image-decor::before, .b-catalog_entry.watching .image-decor::before, .b-catalog_entry.completed .image-decor::before, .b-catalog_entry.rewatching .image-decor::before, .b-catalog_entry.on_hold .image-decor::before, .b-catalog_entry.dropped .image-decor::before, .collection_score .collection_score_marker::before, .b-collection-filters .b-block_list li::before, .b-collection-filters .b-block_list li .b-question::before, .b-collection_search .field .clear::before, .b-comments .comments-collapser::before, body[data-locale] .b-feedback>.marker-positioner>.marker-text::before, .b-footer_vote .star::before, .b-footer_vote .vote-group .vote::before, .b-height_shortener .expand span::before, .b-image .marker::before, .b-input[class] .ti-tag .ti-icon-close::before, .b-news_line-topic .status-line .comments::before, .b-news_wall-topic .status-line .is-pinned::before, .b-news_wall-topic .status-line .comments::before, .b-quote .quoteable::before, .b-quote-v2::before, .b-rate .stars::before, .b-review-topic.is-review_review_author_details>.inner .review-details .name-url .to-review::before, .b-review-topic.is-review_review_author_details>.inner .review-details .opinion::before, .b-review_opinion_marker span::before, .b-reviews_navigation .navigation-container .label::before, .b-shiki_editor footer .about-bb_codes::before, .b-status-line .section.created_at time::before, .b-status-line .section.changed_at time::before, .b-status-line .section.main .comments::before, .b-status-line .section.main .collection-size::before, .b-status-line .section.main .is-pinned::before, .b-to-top .arrow::before, .b-video .video-link::before, .b-video .marker::before, [data-icon]::before, .p-animes-show .c-info-right .watch-online .b-link_button::before, .p-mangas-show .c-info-right .watch-online .b-link_button::before, .p-ranobe-show .c-info-right .watch-online .b-link_button::before, .b-contest_match .prev-match::before, .b-contest_match .next-match::before, .p-profiles .profile-head .c-brief header h1.aliases::before, .p-profiles-favorites .cc-favourites.sortable .b-catalog_entry::before, .p-user_history-index .history-page .history-interval p .destroy::before, .p-user_rates-index .l-content>.mylist a::before {
+.buttons .item-save::before, .buttons .item-moderation::before, .buttons .item-preview::before, .buttons .item-unpreview::before, .buttons .item-quote::before, .buttons .item-reply::before, .buttons .item-edit::before, .buttons .item-delete::before, .buttons .item-delete-confirm::before, .buttons .item-apply::before, .buttons .item-request-confirm::before, .buttons .item-cancel::before, .buttons .item-request-reject::before, .buttons .item-delete-cancel::before, .buttons .item-moderation-cancel::before, .buttons .item-subscribe::before, .buttons .item-offtopic::before, .buttons .item-summary::before, .buttons .item-spoiler::before, .buttons .item-abuse::before, .buttons .item-ban::before, .buttons .item-ignore::before, .buttons .item-ignore.selected::before, .headline>a::before, .midheadline>a::before, .subheadline>a::before, .b-db_entry-variant-list_item>.info .b-user_rate .b-add_to_list .plus::before, .b-db_entry-variant-list_item>.info .b-user_rate .b-add_to_list .edit::before, .b-db_entry-variant-list_item>.info .b-user_rate .b-add_to_list .trigger-arrow::before, .b-forums .forum input+.link::before, .p-contests .match-day .match-link .voted::before, .p-contests .match-day .match-link .winner::before, .p-contests .match-day .match-link .loser::before, .p-contests .match-day .match-link .created::before, .p-contests .match-day .match-link .started::before, .p-contests .match-day .match-link .finished::before, .item-mobile::before, .buttons .editor-controls .b-tooltipped::before, header.head h1 a.back::before, header.head h2 a.back::before, .subheadline-buttons .item-edit::before, .profile-actions>a::before, .b-collection-filters .mylist-block .item-sign::before, .b-collection_item .delete::before, .b-collection_item .drag-handle::before, .b-image .delete::before, .b-image .confirm::before, .b-image .cancel::before, .b-image .mobile-edit::before, .b-list_switchers .switcher::before, .b-subposter-action::before, .b-user_rate .rate-show .rate-number .item-add::before, .p-animes_collection-index .pagination .link::before, .p-recommendations-index .pagination .link::before, .p-dashboards-show .v2 .headline .buttons .options::before, .p-dialogs .misc-links>a::before, .p-profiles-show .about .item-edit::before, .b-stats_bar .compatibility a[href*='/similar/']::before, .b-stats_bar .compatibility .text:first-child::before, .p-messages .mass-actions .action a::before, .p-profiles-favorites .item-back::before, .p-user_rates-index .list-lines tr.edit-form .remove::before, .p-user_rates-index .list-posters .user_rate .edit-user_rate::before, .l-top_menu-v2 .logo-container::before, .l-top_menu-v2 .icon-other::before, .l-top_menu-v2 .menu-icon::before, .l-top_menu-v2 .menu-dropdown>span::before, .l-top_menu-v2 .submenu>a::before, .l-top_menu-v2 .global-search .clear::before, .l-top_menu-v2 .global-search .search-marker::before, .l-page .menu-toggler .toggler::before, #toast-container>.toast-error::before, .tooltip-inner .close::before, .b-ban .spoiler.collapse::before, .b-log_entry .spoiler.collapse::before, .b-user_rate_log .spoiler.collapse::before, .b-achievement .gained::before, .b-achievements_notifier .achievement .content .name .icon::before, .b-add_to_list .plus::before, .b-add_to_list .edit::before, .b-add_to_list.planned .edit::before, .b-add_to_list.on_hold .edit::before, .b-add_to_list.watching .edit::before, .b-add_to_list.rewatching .edit::before, .b-add_to_list.completed .edit::before, .b-add_to_list.dropped .edit::before, .b-add_to_list .trigger-arrow::before, .b-add_to_list.expanded .trigger-arrow::before, .b-catalog_entry.planned .image-decor::before, .b-catalog_entry.watching .image-decor::before, .b-catalog_entry.completed .image-decor::before, .b-catalog_entry.rewatching .image-decor::before, .b-catalog_entry.on_hold .image-decor::before, .b-catalog_entry.dropped .image-decor::before, .collection_score .collection_score_marker::before, .b-collection-filters .b-block_list li::before, .b-collection-filters .b-block_list li .b-question::before, .b-collection_search .field .clear::before, .b-comments .comments-collapser::before, .b-dialog .b-message .inner header::before, body[data-locale] .b-feedback>.marker-positioner>.marker-text::before, .b-footer_vote .star::before, .b-footer_vote .vote-group .vote::before, .b-height_shortener .expand span::before, .b-image .marker::before, .b-input[class] .ti-tag .ti-icon-close::before, .b-news_line-topic .status-line .comments::before, .b-news_wall-topic .status-line .is-pinned::before, .b-news_wall-topic .status-line .comments::before, .b-quote .quoteable::before, .b-quote-v2::before, .b-rate .stars::before, .b-review-topic.is-review_review_author_details>.inner .review-details .name-url .to-review::before, .b-review-topic.is-review_review_author_details>.inner .review-details .opinion::before, .b-review_opinion_marker span::before, .b-reviews_navigation .navigation-container .label::before, .b-shiki_editor footer .about-bb_codes::before, .b-status-line .section.created_at time::before, .b-status-line .section.changed_at time::before, .b-status-line .section.main .comments::before, .b-status-line .section.main .collection-size::before, .b-status-line .section.main .is-pinned::before, .b-to-top .arrow::before, .b-video .video-link::before, .b-video .marker::before, [data-icon]::before, .p-animes-show .c-info-right .watch-online .b-link_button::before, .p-mangas-show .c-info-right .watch-online .b-link_button::before, .p-ranobe-show .c-info-right .watch-online .b-link_button::before, .b-contest_match .prev-match::before, .b-contest_match .next-match::before, .p-profiles .profile-head .c-brief header h1.aliases::before, .p-profiles-favorites .cc-favourites.sortable .b-catalog_entry::before, .p-user_history-index .history-page .history-interval p .destroy::before, .p-user_rates-index .l-content>.mylist a::before {
   display: block;
   flex-shrink: 0;
   width: 1em !important;
@@ -548,15 +564,22 @@ body[data-locale] .b-feedback>.marker-positioner>.marker-text:hover::after, .b-t
   padding-bottom: 4px;
   margin-bottom: 0
 }
-.b-comment>.inner header>a>img, .b-dialog>.inner header>a>img, .b-message>.inner header>a>img, .b-topic>.inner header>a>img {
-  width: 40px;
-  margin: 0 16px 8px 0;
-  border-radius: 2px
+.b-comment>.inner header img, .b-dialog>.inner header img, .b-message>.inner header img, .b-topic>.inner header img {
+  display: block !important;
+  width: 40px !important;
+  min-height: 40px;
+  margin: 0 16px 8px 0 !important;
+  border-radius: var(--border-rounded)
 }
-@media (min-width: 1025px) {
-  .b-comment>.inner header>a>img, .b-dialog>.inner header>a>img, .b-message>.inner header>a>img, .b-topic>.inner header>a>img {
-    margin-top: 4px
+@media (min-width: 960px) {
+  .b-comment>.inner header img, .b-dialog>.inner header img, .b-message>.inner header img, .b-topic>.inner header img {
+    width: 48px !important;
+    min-height: 48px
   }
+}
+.b-comment>.inner header .linkeable img, .b-dialog>.inner header .linkeable img, .b-message>.inner header .linkeable img, .b-topic>.inner header .linkeable img {
+  background: var(--color-surface);
+  visibility: visible !important
 }
 .b-comment>.inner header .name-date, .b-dialog>.inner header .name-date, .b-message>.inner header .name-date, .b-topic>.inner header .name-date {
   margin-left: 0;
@@ -566,11 +589,6 @@ body[data-locale] .b-feedback>.marker-positioner>.marker-text:hover::after, .b-t
 @media (max-width: 1024px) {
   .b-comment>.inner header .name-date, .b-dialog>.inner header .name-date, .b-message>.inner header .name-date, .b-topic>.inner header .name-date {
     padding-right: 48px
-  }
-}
-@media (max-width: 1024px) {
-  .b-comment>.inner header .name-date, .b-dialog>.inner header .name-date, .b-message>.inner header .name-date, .b-topic>.inner header .name-date {
-    line-height: 1.25rem
   }
 }
 .b-comment>.inner header .name-date a.name, .b-dialog>.inner header .name-date a.name, .b-message>.inner header .name-date a.name, .b-topic>.inner header .name-date a.name {
@@ -612,8 +630,10 @@ body[data-locale] .b-feedback>.marker-positioner>.marker-text:hover::after, .b-t
 }
 .b-comment>.inner .was_updated, .b-dialog>.inner .was_updated, .b-message>.inner .was_updated, .b-topic>.inner .was_updated {
   padding-left: 3.5rem;
+  margin-top: 4px;
   margin-bottom: 0;
-  color: var(--color-text-disabled)
+  color: var(--color-text-hint);
+  line-height: 24px
 }
 .b-comment>.inner .was_updated div, .b-dialog>.inner .was_updated div, .b-message>.inner .was_updated div, .b-topic>.inner .was_updated div {
   vertical-align: top;
@@ -1692,6 +1712,9 @@ header.head .notice {
     padding-top: 5px !important
   }
 }
+.subheadline-input:focus {
+  border-color: var(--color-primary)
+}
 .subheadline-buttons {
   right: 0;
   margin: 0;
@@ -2661,6 +2684,20 @@ text, .highcharts-tooltip text tspan:last-child {
   background-color: transparent;
   color: #f7b42c
 }
+.b-anime_status_tag.collection-tag {
+  padding: 0 8px;
+  background-color: var(--color-surface-hover);
+  border-radius: var(--border-rounded);
+  color: var(--color-text-hint);
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 24px;
+  text-transform: uppercase
+}
+.b-anime_status_tag.collection-tag[href]:hover, .b-anime_status_tag.collection-tag[href]:active {
+  background-color: var(--color-surface-active);
+  color: var(--color-text-secondary)
+}
 .b-badge img, .b-badge .no-image {
   border-radius: var(--border-rounded)
 }
@@ -2725,6 +2762,23 @@ text, .highcharts-tooltip text tspan:last-child {
 }
 .b-breadcrumbs .no-url {
   color: var(--color-text-disabled)
+}
+.b-button.blue {
+  background: var(--color-primary);
+  border: 0;
+  color: var(--color-text-on-primary)
+}
+.b-button.blue:hover, .b-button.blue:focus {
+  background: var(--color-primary-hovered);
+  color: var(--color-text-on-primary)
+}
+.b-button.blue:active {
+  background: var(--color-primary-pressed);
+  color: var(--color-text-on-primary)
+}
+.b-button.is-arrow::after {
+  padding-left: 8px;
+  line-height: 1
 }
 h3 .b-button.right {
   margin: 0
@@ -3196,21 +3250,20 @@ pre[data-dynamic='code_highlight'] {
   content: 'clear';
   position: static
 }
+@media (max-width: 959px) {
+  .b-comment>.inner header img {
+    margin-bottom: 12px !important
+  }
+}
 .b-comment header .time:hover {
   text-decoration: underline
 }
 .b-comment header .hash {
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
   margin: 0;
   opacity: 0;
   z-index: 1
-}
-.b-comment div.body {
-  line-height: 1.25
 }
 .comments-loaded .b-comment:last-child {
   margin-bottom: 0
@@ -3221,6 +3274,11 @@ pre[data-dynamic='code_highlight'] {
   height: 1px;
   margin-left: 56px;
   background-color: var(--color-border)
+}
+@media (min-width: 960px) {
+  .b-comment:not(:last-child)::after {
+    margin-left: 64px
+  }
 }
 .tooltip .b-comment::after {
   opacity: 0
@@ -3472,6 +3530,11 @@ pre[data-dynamic='code_highlight'] {
   margin: 0 calc(var(--l-margin) * -1);
   transition: none
 }
+@media (max-width: 959px) {
+  .b-dialog>.inner header img {
+    margin-bottom: 12px !important
+  }
+}
 @media (max-width: 1024px) {
   .b-dialog .time {
     display: block !important;
@@ -3501,13 +3564,24 @@ pre[data-dynamic='code_highlight'] {
   overflow: visible
 }
 .b-dialog .b-message .inner {
-  position: static
+  position: static;
+  padding: 0 !important
+}
+.b-dialog .b-message .inner header {
+  display: flex
+}
+.b-dialog .b-message .inner header::before {
+  content: 'reply';
+  margin-right: 12px;
+  color: var(--color-text-disabled)
 }
 .b-dialog .b-message .inner header img {
-  width: 24px;
-  margin: 0 12px 0 0
+  width: 24px !important;
+  min-height: 24px;
+  margin: 0 8px 0 0 !important
 }
 .b-dialog .b-message .inner header .name-date {
+  margin-left: 0 !important;
   line-height: inherit
 }
 @media (max-width: 1024px) {
@@ -3524,7 +3598,12 @@ pre[data-dynamic='code_highlight'] {
   display: block;
   height: 1px;
   margin: 0 calc(var(--l-margin) * -1) 0 56px;
-  background: var(--color-border)
+  background-color: var(--color-border)
+}
+@media (min-width: 960px) {
+  .b-dialog:not(:last-child)::after {
+    margin-left: 64px
+  }
 }
 .b-dropzone {
   padding: 12px;
@@ -4192,6 +4271,7 @@ body[data-locale] .b-feedback>.marker-positioner:active>.marker-text {
   padding: 0 12px;
   background: transparent;
   box-shadow: none;
+  color: inherit;
   line-height: 40px
 }
 .b-input[class] .ti-tag {
@@ -4346,6 +4426,12 @@ body[data-locale] .b-feedback>.marker-positioner:active>.marker-text {
 .b-message .b-anime_status_tag {
   vertical-align: top;
   margin: 0 .5rem 0 0
+}
+.b-message .inner header .b-user16 img {
+  width: 16px !important;
+  min-height: 16px;
+  margin: 2px 0 2px -12px !important;
+  border-radius: 50%
 }
 .b-message header .broadcast-by {
   display: inline-block;
@@ -5614,20 +5700,10 @@ body[data-locale] .b-offtopic_marker.active.off, body[data-locale] .b-offtopic_m
 }
 .b-spoiler_block>div {
   position: relative;
-  padding: 8px 0 16px 16px;
+  padding: 8px 0 16px;
   margin: 0 16px;
   background: transparent;
   border: 0
-}
-.b-spoiler_block>div::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  margin: 8px 0 16px;
-  border-left: 2px solid var(--color-text-hint);
-  border-radius: 2px
 }
 .b-spoiler_inline {
   padding: 1px 4px
@@ -5924,6 +6000,7 @@ body[data-locale] .b-offtopic_marker.active.off, body[data-locale] .b-offtopic_m
 }
 .b-topic {
   margin-bottom: 0;
+  border: none;
   line-height: inherit
 }
 .b-topic>.editor-container {
@@ -5933,7 +6010,7 @@ body[data-locale] .b-offtopic_marker.active.off, body[data-locale] .b-offtopic_m
   vertical-align: top;
   margin: 0 .5em 0 0
 }
-.b-topic>.inner>header .name-date a {
+.b-topic>.inner>header .name-date .name {
   font-size: inherit
 }
 .b-topic>.inner>header .about {
@@ -5978,12 +6055,15 @@ body[data-locale] .b-offtopic_marker.active.off, body[data-locale] .b-offtopic_m
   padding: 0 !important
 }
 .b-topic-preview>.b-comments, .b-topic-preview>.inner>footer {
-  padding-left: 56px
+  padding-left: 0
 }
-@media screen and (max-width: 767px) {
+@media (min-width: 960px) {
   .b-topic-preview>.b-comments, .b-topic-preview>.inner>footer {
-    padding-left: 0
+    padding-left: 64px
   }
+}
+.b-topic-preview.b-news-topic>.inner>.body {
+  clear: both
 }
 .b-upload_progress.active {
   height: 1.5rem;
@@ -6655,16 +6735,16 @@ body[data-locale] .b-offtopic_marker.active.off, body[data-locale] .b-offtopic_m
     grid-row-end: span 2
   }
 }
-.p-animes-show .other-names, .p-mangas-show .other-names, .p-ranobe-show .other-names {
+.p-animes-show .other-names, .p-animes-show .more-info, .p-mangas-show .other-names, .p-mangas-show .more-info, .p-ranobe-show .other-names, .p-ranobe-show .more-info {
   background-color: var(--color-surface);
   border-color: var(--color-border);
   color: inherit !important
 }
-.p-animes-show .other-names:hover, .p-mangas-show .other-names:hover, .p-ranobe-show .other-names:hover {
+.p-animes-show .other-names:hover, .p-animes-show .more-info:hover, .p-mangas-show .other-names:hover, .p-mangas-show .more-info:hover, .p-ranobe-show .other-names:hover, .p-ranobe-show .more-info:hover {
   background-color: var(--color-surface-hover);
   border-color: var(--color-border)
 }
-.p-animes-show .other-names:active, .p-mangas-show .other-names:active, .p-ranobe-show .other-names:active {
+.p-animes-show .other-names:active, .p-animes-show .more-info:active, .p-mangas-show .other-names:active, .p-mangas-show .more-info:active, .p-ranobe-show .other-names:active, .p-ranobe-show .more-info:active {
   background-color: var(--color-surface-active);
   border-color: var(--color-border)
 }
@@ -8689,42 +8769,65 @@ body[data-locale] .b-offtopic_marker.active.off, body[data-locale] .b-offtopic_m
   }
   .p-profiles .profile-head .c-history .subheadline {
     display: inline-block;
-    vertical-align: top
+    vertical-align: top;
+    margin: 0 0 0 -16px
   }
   .p-profiles .profile-head .c-history .subheadline a {
-    color: #eee !important
+    margin-right: -16px;
+    color: #eee !important;
+    -webkit-tap-highlight-color: transparent
   }
   .p-profiles .profile-head .c-history .subheadline a::before {
     display: none
   }
-  .p-profiles .profile-head .c-history .b-block_list {
+  .p-profiles .profile-head .c-history>div:last-child {
     display: inline-block;
     vertical-align: top;
-    padding: .5rem;
-    margin-left: .5rem
+    padding: 0;
+    margin-left: 0
   }
   .p-profiles .profile-head .c-history .entry {
-    display: inline-block !important;
+    display: inline-block;
     vertical-align: top;
-    min-width: 112px;
-    height: 2rem;
-    padding-right: .5rem;
-    padding-left: .5rem;
-    margin-left: .5rem;
-    border-radius: 1rem;
-    overflow: hidden
+    padding: 4px !important;
+    margin: 0 0 0 8px
   }
-  .p-profiles .profile-head .c-history .entry .image-name {
-    float: left;
-    width: 32px;
-    height: 32px;
-    margin: -8px 8px -8px -8px;
-    border-radius: 50%;
-    font-size: 0;
-    line-height: 0;
-    overflow: hidden
+  .p-profiles .profile-head .c-history .entry a {
+    display: block;
+    max-width: 264px;
+    padding: 4px !important;
+    margin: -4px;
+    border-radius: 24px;
+    color: var(--color-text-hint) !important;
+    line-height: 20px;
+    transition: 0.16s cubic-bezier(0.4, 0, 0.6, 1);
+    overflow: hidden;
+    -webkit-tap-highlight-color: transparent
   }
-  .p-profiles .profile-head .c-history .entry::before, .p-profiles .profile-head .c-history .entry span.misc {
+  .p-profiles .profile-head .c-history .entry img {
+    width: 40px;
+    max-width: 40px;
+    height: 40px;
+    margin: 0 8px 0 0;
+    object-fit: cover;
+    object-position: center 15%;
+    border-radius: 50%
+  }
+  .p-profiles .profile-head .c-history .entry .title {
+    line-height: 20px;
+    margin: 0
+  }
+  .p-profiles .profile-head .c-history .entry .misc {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 20px;
+    max-width: 154px;
+    text-overflow: ellipsis
+  }
+  .p-profiles .profile-head .c-history .entry time.misc {
+    margin-left: .5em
+  }
+  .p-profiles .profile-head .c-history .entry::before {
     display: none
   }
 }
