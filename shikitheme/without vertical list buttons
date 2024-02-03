@@ -94,7 +94,7 @@ body {
   line-height: 2em
 }
 .l-footer::before {
-  content: "shiki-theme v1.6.96-stable";
+  content: "shiki-theme v1.7.0-stable";
   display: block;
   float: left;
   position: static;
@@ -107,7 +107,7 @@ body {
   font-weight: 700
 }
 body[data-user*=':2727,'] .l-footer::before {
-  content: "shiki-theme v1.6.96-stable"
+  content: "shiki-theme v1.7.0-stable"
 }
 .l-footer::after {
   display: none
@@ -2802,6 +2802,14 @@ a.b-button {
 a.b-button:active {
   color: var(--color-primary)
 }
+.b-button[data-tab-switch] {
+  min-width: 24px;
+  padding: 0 8px;
+  margin: 0 8px 0 0
+}
+.b-button[data-tab-switch]:last-child {
+  margin-right: 0
+}
 .b-button[data-tab-switch]:not(.active) {
   background-color: var(--color-surface);
   color: var(--color-text-primary)
@@ -5308,6 +5316,9 @@ body[data-locale] .b-feedback>.marker-positioner:active>.marker-text {
 }
 .b-reviews_navigation .review-controls .to-other-reviews::after, .b-reviews_navigation .review-controls .create-topic::after {
   display: none
+}
+.b-shiki_editor {
+  line-height: inherit
 }
 .b-shiki_editor aside.markers {
   position: relative;
@@ -8713,7 +8724,7 @@ body[data-locale] .b-offtopic_marker.active.off, body[data-locale] .b-offtopic_m
 }
 @media (min-width: 320px) and (max-width: 480px) {
   .p-profiles .profile-head {
-    padding-top: 128px
+    padding-top: 144px
   }
 }
 @media (min-width: 481px) and (max-width: 959px) {
@@ -8732,8 +8743,8 @@ body[data-locale] .b-offtopic_marker.active.off, body[data-locale] .b-offtopic_m
 }
 @media (min-width: 320px) and (max-width: 480px) {
   .p-profiles .profile-head .c-brief {
-    padding: 12px 16px;
-    margin: 0 -16px 1em
+    padding: 0 0 12px;
+    margin: 0 calc(var(--l-margin) * -1) 16px
   }
 }
 @media (min-width: 481px) {
@@ -8754,21 +8765,51 @@ body[data-locale] .b-offtopic_marker.active.off, body[data-locale] .b-offtopic_m
 @media (max-width: 480px) {
   .p-profiles .profile-head .c-brief .avatar {
     float: none;
-    position: relative;
-    max-width: 100%;
+    width: 36%;
+    max-width: 160px;
     min-height: 72px;
-    margin: 0 0 12px
+    margin: 0 auto 12px
   }
+}
+.p-profiles .profile-head .c-brief .avatar::before, .p-profiles .profile-head .c-brief .avatar::after {
+  --translateY: translateY(-50%);
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: inherit;
+  max-width: 160px;
+  margin: 0 auto;
+  aspect-ratio: 1/1;
+  background: transparent center / cover;
+  transform: var(--translateY);
+  transform-origin: center;
+  image-rendering: -webkit-optimize-contrast;
+  pointer-events: none;
+  z-index: 1
+}
+@media (min-width: 481px) {
+  .p-profiles .profile-head .c-brief .avatar::before, .p-profiles .profile-head .c-brief .avatar::after {
+    --translateY: translateY(0);
+    inset: 12px auto;
+    width: 80px;
+    max-width: none
+  }
+}
+.p-profiles .profile-head .c-brief .avatar::after {
+  background-image: var(--user-avatar-frame, none);
+  transform: var(--translateY) scale(var(--user-avatar-frame-scale, 1))
 }
 .p-profiles .profile-head .c-brief .avatar img {
   vertical-align: top
 }
 @media (min-width: 320px) and (max-width: 480px) {
   .p-profiles .profile-head .c-brief .avatar img {
-    width: 36%;
-    max-width: 160px;
-    transform: translateY(calc(-50% - 12px));
-    margin-bottom: -18%
+    width: 100%;
+    transform: translateY(-50%);
+    margin-bottom: -50%
   }
 }
 .p-profiles .profile-head .c-brief .avatar .profile-actions {
@@ -8779,7 +8820,9 @@ body[data-locale] .b-offtopic_marker.active.off, body[data-locale] .b-offtopic_m
   .p-profiles .profile-head .c-brief .avatar .profile-actions {
     position: absolute;
     top: 0;
-    width: 100%;
+    right: 0;
+    left: 0;
+    padding: 12px 16px;
     margin: 0;
     text-align: left
   }
@@ -8841,13 +8884,13 @@ body[data-locale] .b-offtopic_marker.active.off, body[data-locale] .b-offtopic_m
     padding: 0;
     margin-left: 0
   }
-  .p-profiles .profile-head .c-history .entry {
+  .p-profiles .profile-head .c-history .entry[class] {
     display: inline-block;
     vertical-align: top;
     padding: 4px !important;
     margin: 0 0 0 8px
   }
-  .p-profiles .profile-head .c-history .entry a {
+  .p-profiles .profile-head .c-history .entry[class] a {
     display: block;
     max-width: 264px;
     padding: 4px !important;
@@ -8859,7 +8902,7 @@ body[data-locale] .b-offtopic_marker.active.off, body[data-locale] .b-offtopic_m
     overflow: hidden;
     -webkit-tap-highlight-color: transparent
   }
-  .p-profiles .profile-head .c-history .entry img {
+  .p-profiles .profile-head .c-history .entry[class] img {
     width: 40px;
     max-width: 40px;
     height: 40px;
@@ -8868,21 +8911,21 @@ body[data-locale] .b-offtopic_marker.active.off, body[data-locale] .b-offtopic_m
     object-position: center 15%;
     border-radius: 50%
   }
-  .p-profiles .profile-head .c-history .entry .title {
+  .p-profiles .profile-head .c-history .entry[class] .title {
     line-height: 20px;
     margin: 0
   }
-  .p-profiles .profile-head .c-history .entry .misc {
+  .p-profiles .profile-head .c-history .entry[class] .misc {
     display: inline-block;
     vertical-align: top;
     line-height: 20px;
     max-width: 154px;
     text-overflow: ellipsis
   }
-  .p-profiles .profile-head .c-history .entry time.misc {
+  .p-profiles .profile-head .c-history .entry[class] time.misc {
     margin-left: .5em
   }
-  .p-profiles .profile-head .c-history .entry::before {
+  .p-profiles .profile-head .c-history .entry[class]::before {
     display: none
   }
 }
