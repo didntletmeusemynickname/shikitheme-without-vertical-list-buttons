@@ -94,7 +94,7 @@ body {
   line-height: 2em
 }
 .l-footer::before {
-  content: "shiki-theme v1.7.0-stable";
+  content: "shiki-theme v1.7.1-stable";
   display: block;
   float: left;
   position: static;
@@ -107,7 +107,7 @@ body {
   font-weight: 700
 }
 body[data-user*=':2727,'] .l-footer::before {
-  content: "shiki-theme v1.7.0-stable"
+  content: "shiki-theme v1.7.1-stable"
 }
 .l-footer::after {
   display: none
