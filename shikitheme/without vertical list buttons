@@ -98,7 +98,7 @@ body {
   line-height: 2em;
 }
 .l-footer::before {
-  content: "shiki-theme v1.8.4-stable";
+  content: "shiki-theme v1.8.6-stable";
   display: block;
   float: left;
   position: static;
@@ -111,7 +111,7 @@ body {
   font-weight: 700;
 }
 body[data-user*=":2727,"] .l-footer::before {
-  content: "shiki-theme v1.8.4-stable";
+  content: "shiki-theme v1.8.6-stable";
 }
 .l-footer::after {
   display: none;
@@ -6688,16 +6688,18 @@ body[data-locale] .b-feedback > .marker-positioner:active > .marker-text {
   margin-top: 0;
 }
 .b-reviews_navigation .review-controls {
+  display: flex;
+  align-items: flex-start;
   flex-direction: row-reverse;
   justify-content: space-between;
   padding: 10px 0;
 }
 .b-reviews_navigation .review-controls .to-other-reviews,
-.b-reviews_navigation .review-controls .create-topic {
+.b-reviews_navigation .review-controls .create-review {
   margin: 0;
 }
 .b-reviews_navigation .review-controls .to-other-reviews::after,
-.b-reviews_navigation .review-controls .create-topic::after {
+.b-reviews_navigation .review-controls .create-review::after {
   display: none;
 }
 .b-shiki_editor {
@@ -10996,6 +10998,7 @@ a.b-user16:focus {
   color: var(--color-text-hint) !important;
 }
 .p-topics header h1 a.reload {
+  align-items: flex-start;
   color: var(--color-text-secondary) !important;
 }
 .p-topics header h1 a.reload:hover::after {
