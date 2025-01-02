@@ -98,7 +98,7 @@ body {
   line-height: 2em;
 }
 .l-footer::before {
-  content: "shiki-theme v1.8.6-stable";
+  content: "shiki-theme v1.9.1-stable";
   display: block;
   float: left;
   position: static;
@@ -111,7 +111,7 @@ body {
   font-weight: 700;
 }
 body[data-user*=":2727,"] .l-footer::before {
-  content: "shiki-theme v1.8.6-stable";
+  content: "shiki-theme v1.9.1-stable";
 }
 .l-footer::after {
   display: none;
@@ -620,6 +620,76 @@ html.turbolinks-progress-bar:before,
 }
 .text-red {
   color: var(--color-danger);
+}
+:root {
+  --text-editor-button-help: "Справка";
+  --text-editor-label-link: "Ссылка";
+  --text-editor-label-anime: "Аниме";
+  --text-editor-label-manga: "Манга";
+  --text-editor-label-ranobe: "Ранобэ";
+  --text-editor-label-character: "Персонаж";
+  --text-editor-label-person: "Человек";
+  --text-editor-label-image: "Изображение";
+  --text-editor-label-quote: "Имя пользователя";
+  --text-editor-preview-button: "Превью";
+  --text-editor-unpreview-button: "Редактировать";
+  --text-editor-unsaved-content: "В редакторе остался не сохранённый текст. Восстановить?";
+  --text-change-button: "Изменить";
+  --text-contest-winners: "Победы в турнирах";
+  --text-dashboards-forum-button: "Форум";
+  --text-dialogs-action-check: "Непрочитанные начиная со старых";
+  --text-filters-add: "Исключить";
+  --text-filters-minus: "Добавить";
+  --text-filters-mylist: "Мой список";
+  --text-messages-action-delete: "Удалить всё";
+  --text-messages-action-done: "Прочитать всё";
+  --text-profile-additionals-label: "Активность на сайте:";
+  --text-profile-lifetime-label: "Активность";
+  --text-profile-similarity-full: "Полная совместимость";
+  --text-profile-similarity-high: "Высокая совместимость";
+  --text-profile-similarity-middle: "Средняя совместимость";
+  --text-profile-similarity-search: "Найти похожих пользователей";
+  --text-profile-similarity-weak: "Низкая совместимость";
+  --text-profile-similarity-zero: "Нет совместимости";
+  --text-review-on-subject: " отзыв к ";
+  --text-review-to-review: "К отзыву";
+  --text-sidebar-toggle-label: "меню";
+  --text-to-top: "Вернуться наверх";
+}
+[data-locale="en"] {
+  --text-editor-button-help: "Help";
+  --text-editor-label-link: "Page URL";
+  --text-editor-label-anime: "Anime";
+  --text-editor-label-manga: "Manga";
+  --text-editor-label-ranobe: "Light Novel";
+  --text-editor-label-character: "Character";
+  --text-editor-label-person: "Person";
+  --text-editor-label-image: "Image";
+  --text-editor-label-quote: "Username";
+  --text-editor-preview-button: "Preview";
+  --text-editor-unpreview-button: "Edit";
+  --text-editor-unsaved-content: "The editor has unsaved draft. Restore it?";
+  --text-change-button: "Change";
+  --text-contest-winners: "Winner of contests";
+  --text-dashboards-forum-button: "Forum";
+  --text-dialogs-action-check: "Unread messages from oldest one";
+  --text-filters-add: "Exclude";
+  --text-filters-minus: "Include";
+  --text-filters-mylist: "My List";
+  --text-messages-action-delete: "Remove all messages";
+  --text-messages-action-done: "Mark all messages as read";
+  --text-profile-additionals-label: "Activity:";
+  --text-profile-lifetime-label: "Time spent";
+  --text-profile-similarity-full: "Full compatibility";
+  --text-profile-similarity-high: "High compatibility";
+  --text-profile-similarity-middle: "Medium compatibility";
+  --text-profile-similarity-search: "Find similar users";
+  --text-profile-similarity-weak: "Low compatibility";
+  --text-profile-similarity-zero: "No compatibility";
+  --text-review-on-subject: " review on ";
+  --text-review-to-review: "To review";
+  --text-sidebar-toggle-label: "sidebar";
+  --text-to-top: "Back to top";
 }
 :root {
   --font-icons-family: "Material Icons";
@@ -2463,11 +2533,8 @@ body[data-locale] .off.b-abuse_marker,
 .l-page.menu-expanded .menu-toggler .toggler::before {
   transform: rotate(90deg);
 }
-[data-locale="ru"] .l-page .menu-toggler .toggler::after {
-  content: "меню";
-}
-[data-locale="en"] .l-page .menu-toggler .toggler::after {
-  content: "sidebar";
+[data-locale] .l-page .menu-toggler .toggler::after {
+  content: var(--text-sidebar-toggle-label);
 }
 @media screen and (max-width: 1024px) and (min-width: 768px) and (orientation: landscape) {
   .l-page .menu-toggler.ipad-expanded {
@@ -4389,16 +4456,10 @@ pre[data-dynamic="code_highlight"] {
   text-transform: lowercase;
 }
 .b-collection-filters .b-block_list li .filter.item-add::before {
-  content: "Исключить";
-}
-[data-locale="en"] .b-collection-filters .b-block_list li .filter.item-add::before {
-  content: "Exclude";
+  content: var(--text-filters-add);
 }
 .b-collection-filters .b-block_list li .filter.item-minus::before {
-  content: "Добавить";
-}
-[data-locale="en"] .b-collection-filters .b-block_list li .filter.item-minus::before {
-  content: "Include";
+  content: var(--text-filters-minus);
 }
 .b-collection-filters .b-block_list.orders li::before {
   content: "radio_button_unchecked";
@@ -4418,13 +4479,9 @@ pre[data-dynamic="code_highlight"] {
 }
 .p-animes_collection .b-collection-filters .mylist-block .subheadline::after,
 .p-userlist_comparer .b-collection-filters .mylist-block .subheadline::after {
-  content: "Мой список";
+  content: var(--text-filters-mylist);
   font-size: 0.875rem;
   line-height: 1rem;
-}
-[data-locale="en"] .p-animes_collection .b-collection-filters .mylist-block .subheadline::after,
-[data-locale="en"] .p-userlist_comparer .b-collection-filters .mylist-block .subheadline::after {
-  content: "My List";
 }
 .b-collection-filters .mylist-block .item-sign {
   margin-right: 0 !important;
@@ -4738,6 +4795,30 @@ pre[data-dynamic="code_highlight"] {
 .b-db_entry > .c-about .contest_winners {
   margin-top: 0;
   margin-bottom: 1em;
+}
+.b-db_entry > .c-about .contest_winners .medal {
+  display: flex;
+  float: none;
+  width: auto;
+  height: auto;
+}
+.b-db_entry > .c-about .contest_winners .medal::before {
+  display: none;
+}
+.b-db_entry > .c-about .contest_winners .medal::after {
+  content: var(--text-contest-winners);
+  padding: 16px;
+  margin: 0 -16px;
+  background-color: rgba(0, 0, 0, 0);
+  border: 0;
+  color: var(--color-text-hint);
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+.b-db_entry > .c-about .contest_winners .winners {
+  margin: 0;
 }
 @media (min-width: 768px) {
   .p-people-show .b-db_entry > .c-about {
@@ -5391,8 +5472,11 @@ body[data-locale] .b-feedback > .marker-positioner:active > .marker-text {
   display: inline-block;
   vertical-align: top;
   padding: 0;
-  margin: 1px 4px 0 -6px;
+  margin: 1px -7px;
   font-size: 18px !important;
+}
+.b-image .marker .marker-text {
+  margin-left: 10px;
 }
 .b-image .controls {
   bottom: 0;
@@ -6371,11 +6455,8 @@ body[data-locale] .b-feedback > .marker-positioner:active > .marker-text {
   margin-right: 8px;
 }
 .b-review-topic.is-review_review_author_details > .inner .review-details .name-url .to-review::after {
-  content: "К отзыву";
+  content: var(--text-review-to-review);
   font-size: 14px;
-}
-[data-locale="en"] .b-review-topic.is-review_review_author_details > .inner .review-details .name-url .to-review::after {
-  content: "To review";
 }
 .b-review-topic.is-review_review_author_details > .inner .review-details .b-status-line {
   color: var(--color-text-hint);
@@ -6828,12 +6909,9 @@ body[data-locale] .b-feedback > .marker-positioner:active > .marker-text {
   font-size: 0;
 }
 .b-shiki_editor footer .unpreview:not(.link)::after {
-  content: "Редактировать";
+  content: var(--text-editor-unpreview-button);
   vertical-align: top;
   font-size: 0.875rem;
-}
-[data-locale="en"] .b-shiki_editor footer .unpreview:not(.link)::after {
-  content: "Edit";
 }
 .b-shiki_editor footer .about-bb_codes {
   flex-basis: auto;
@@ -6859,13 +6937,10 @@ body[data-locale] .b-feedback > .marker-positioner:active > .marker-text {
   font-size: 1rem;
 }
 .b-shiki_editor footer .about-bb_codes::after {
-  content: "Справка";
+  content: var(--text-editor-button-help);
   display: none;
   vertical-align: top;
   font-size: 0.875rem;
-}
-[data-locale="en"] .b-shiki_editor footer .about-bb_codes::after {
-  content: "Help";
 }
 @media (max-width: 420px) {
   .b-shiki_editor footer .about-bb_codes {
@@ -6901,76 +6976,64 @@ body[data-locale] .b-feedback > .marker-positioner:active > .marker-text {
   left: 0;
 }
 .b-shiki_editor .links .link-value[placeholder*="стран"] + .ok::before,
+.b-shiki_editor .links .link-value[placeholder*="page"] + .ok::before,
 .b-shiki_editor .images .link-value[placeholder*="стран"] + .ok::before,
+.b-shiki_editor .images .link-value[placeholder*="page"] + .ok::before,
 .b-shiki_editor .quotes .link-value[placeholder*="стран"] + .ok::before,
-.b-shiki_editor .upload .link-value[placeholder*="стран"] + .ok::before {
-  content: "Ссылка";
-}
-[data-locale="en"] .b-shiki_editor .links .link-value[placeholder*="page"] + .ok::before,
-[data-locale="en"] .b-shiki_editor .images .link-value[placeholder*="page"] + .ok::before,
-[data-locale="en"] .b-shiki_editor .quotes .link-value[placeholder*="page"] + .ok::before,
-[data-locale="en"] .b-shiki_editor .upload .link-value[placeholder*="page"] + .ok::before {
-  content: "Page URL";
+.b-shiki_editor .quotes .link-value[placeholder*="page"] + .ok::before,
+.b-shiki_editor .upload .link-value[placeholder*="стран"] + .ok::before,
+.b-shiki_editor .upload .link-value[placeholder*="page"] + .ok::before {
+  content: var(--text-editor-label-link);
 }
 .b-shiki_editor .links .link-value[placeholder*="аним"] + .ok::before,
+.b-shiki_editor .links .link-value[placeholder*="anim"] + .ok::before,
 .b-shiki_editor .images .link-value[placeholder*="аним"] + .ok::before,
+.b-shiki_editor .images .link-value[placeholder*="anim"] + .ok::before,
 .b-shiki_editor .quotes .link-value[placeholder*="аним"] + .ok::before,
-.b-shiki_editor .upload .link-value[placeholder*="аним"] + .ok::before {
-  content: "Аниме";
-}
-[data-locale="en"] .b-shiki_editor .links .link-value[placeholder*="anim"] + .ok::before,
-[data-locale="en"] .b-shiki_editor .images .link-value[placeholder*="anim"] + .ok::before,
-[data-locale="en"] .b-shiki_editor .quotes .link-value[placeholder*="anim"] + .ok::before,
-[data-locale="en"] .b-shiki_editor .upload .link-value[placeholder*="anim"] + .ok::before {
-  content: "Anime";
+.b-shiki_editor .quotes .link-value[placeholder*="anim"] + .ok::before,
+.b-shiki_editor .upload .link-value[placeholder*="аним"] + .ok::before,
+.b-shiki_editor .upload .link-value[placeholder*="anim"] + .ok::before {
+  content: var(--text-editor-label-anime);
 }
 .b-shiki_editor .links .link-value[placeholder*="манг"] + .ok::before,
+.b-shiki_editor .links .link-value[placeholder*="mang"] + .ok::before,
 .b-shiki_editor .images .link-value[placeholder*="манг"] + .ok::before,
+.b-shiki_editor .images .link-value[placeholder*="mang"] + .ok::before,
 .b-shiki_editor .quotes .link-value[placeholder*="манг"] + .ok::before,
-.b-shiki_editor .upload .link-value[placeholder*="манг"] + .ok::before {
-  content: "Манга";
-}
-[data-locale="en"] .b-shiki_editor .links .link-value[placeholder*="mang"] + .ok::before,
-[data-locale="en"] .b-shiki_editor .images .link-value[placeholder*="mang"] + .ok::before,
-[data-locale="en"] .b-shiki_editor .quotes .link-value[placeholder*="mang"] + .ok::before,
-[data-locale="en"] .b-shiki_editor .upload .link-value[placeholder*="mang"] + .ok::before {
-  content: "Manga";
+.b-shiki_editor .quotes .link-value[placeholder*="mang"] + .ok::before,
+.b-shiki_editor .upload .link-value[placeholder*="манг"] + .ok::before,
+.b-shiki_editor .upload .link-value[placeholder*="mang"] + .ok::before {
+  content: var(--text-editor-label-manga);
 }
 .b-shiki_editor .links .link-value[placeholder*="рано"] + .ok::before,
+.b-shiki_editor .links .link-value[placeholder*="nove"] + .ok::before,
 .b-shiki_editor .images .link-value[placeholder*="рано"] + .ok::before,
+.b-shiki_editor .images .link-value[placeholder*="nove"] + .ok::before,
 .b-shiki_editor .quotes .link-value[placeholder*="рано"] + .ok::before,
-.b-shiki_editor .upload .link-value[placeholder*="рано"] + .ok::before {
-  content: "Ранобэ";
-}
-[data-locale="en"] .b-shiki_editor .links .link-value[placeholder*="nove"] + .ok::before,
-[data-locale="en"] .b-shiki_editor .images .link-value[placeholder*="nove"] + .ok::before,
-[data-locale="en"] .b-shiki_editor .quotes .link-value[placeholder*="nove"] + .ok::before,
-[data-locale="en"] .b-shiki_editor .upload .link-value[placeholder*="nove"] + .ok::before {
-  content: "Light Novel";
+.b-shiki_editor .quotes .link-value[placeholder*="nove"] + .ok::before,
+.b-shiki_editor .upload .link-value[placeholder*="рано"] + .ok::before,
+.b-shiki_editor .upload .link-value[placeholder*="nove"] + .ok::before {
+  content: var(--text-editor-label-ranobe);
 }
 .b-shiki_editor .links .link-value[placeholder*="перс"] + .ok::before,
+.b-shiki_editor .links .link-value[placeholder*="cter"] + .ok::before,
 .b-shiki_editor .images .link-value[placeholder*="перс"] + .ok::before,
+.b-shiki_editor .images .link-value[placeholder*="cter"] + .ok::before,
 .b-shiki_editor .quotes .link-value[placeholder*="перс"] + .ok::before,
-.b-shiki_editor .upload .link-value[placeholder*="перс"] + .ok::before {
-  content: "Персонаж";
-}
-[data-locale="en"] .b-shiki_editor .links .link-value[placeholder*="cter"] + .ok::before,
-[data-locale="en"] .b-shiki_editor .images .link-value[placeholder*="cter"] + .ok::before,
-[data-locale="en"] .b-shiki_editor .quotes .link-value[placeholder*="cter"] + .ok::before,
-[data-locale="en"] .b-shiki_editor .upload .link-value[placeholder*="cter"] + .ok::before {
-  content: "Character";
+.b-shiki_editor .quotes .link-value[placeholder*="cter"] + .ok::before,
+.b-shiki_editor .upload .link-value[placeholder*="перс"] + .ok::before,
+.b-shiki_editor .upload .link-value[placeholder*="cter"] + .ok::before {
+  content: var(--text-editor-label-character);
 }
 .b-shiki_editor .links .link-value[placeholder*="чело"] + .ok::before,
+.b-shiki_editor .links .link-value[placeholder*="pers"] + .ok::before,
 .b-shiki_editor .images .link-value[placeholder*="чело"] + .ok::before,
+.b-shiki_editor .images .link-value[placeholder*="pers"] + .ok::before,
 .b-shiki_editor .quotes .link-value[placeholder*="чело"] + .ok::before,
-.b-shiki_editor .upload .link-value[placeholder*="чело"] + .ok::before {
-  content: "Человек";
-}
-[data-locale="en"] .b-shiki_editor .links .link-value[placeholder*="pers"] + .ok::before,
-[data-locale="en"] .b-shiki_editor .images .link-value[placeholder*="pers"] + .ok::before,
-[data-locale="en"] .b-shiki_editor .quotes .link-value[placeholder*="pers"] + .ok::before,
-[data-locale="en"] .b-shiki_editor .upload .link-value[placeholder*="pers"] + .ok::before {
-  content: "Person";
+.b-shiki_editor .quotes .link-value[placeholder*="pers"] + .ok::before,
+.b-shiki_editor .upload .link-value[placeholder*="чело"] + .ok::before,
+.b-shiki_editor .upload .link-value[placeholder*="pers"] + .ok::before {
+  content: var(--text-editor-label-person);
 }
 .b-shiki_editor .links .b-button.ok,
 .b-shiki_editor .images .b-button.ok,
@@ -6998,25 +7061,13 @@ body[data-locale] .b-feedback > .marker-positioner:active > .marker-text {
 .b-shiki_editor .images .b-button.ok[data-type="images"]::before,
 .b-shiki_editor .quotes .b-button.ok[data-type="images"]::before,
 .b-shiki_editor .upload .b-button.ok[data-type="images"]::before {
-  content: "Изображение";
-}
-[data-locale="en"] .b-shiki_editor .links .b-button.ok[data-type="images"]::before,
-[data-locale="en"] .b-shiki_editor .images .b-button.ok[data-type="images"]::before,
-[data-locale="en"] .b-shiki_editor .quotes .b-button.ok[data-type="images"]::before,
-[data-locale="en"] .b-shiki_editor .upload .b-button.ok[data-type="images"]::before {
-  content: "Image";
+  content: var(--text-editor-label-image);
 }
 .b-shiki_editor .links .b-button.ok[data-type="quotes"]::before,
 .b-shiki_editor .images .b-button.ok[data-type="quotes"]::before,
 .b-shiki_editor .quotes .b-button.ok[data-type="quotes"]::before,
 .b-shiki_editor .upload .b-button.ok[data-type="quotes"]::before {
-  content: "Имя пользователя";
-}
-[data-locale="en"] .b-shiki_editor .links .b-button.ok[data-type="quotes"]::before,
-[data-locale="en"] .b-shiki_editor .images .b-button.ok[data-type="quotes"]::before,
-[data-locale="en"] .b-shiki_editor .quotes .b-button.ok[data-type="quotes"]::before,
-[data-locale="en"] .b-shiki_editor .upload .b-button.ok[data-type="quotes"]::before {
-  content: "Username";
+  content: var(--text-editor-label-quote);
 }
 body[data-locale] .b-abuse_marker {
   color: var(--color-danger);
@@ -7504,11 +7555,8 @@ body[data-locale] .b-new_marker.active.off:hover {
   text-shadow: none !important;
   transform: rotate(-90deg);
 }
-[data-locale="ru"] .b-to-top .arrow::after {
-  content: "Вернуться наверх";
-}
-[data-locale="en"] .b-to-top .arrow::after {
-  content: "Back to top";
+[data-locale] .b-to-top .arrow::after {
+  content: var(--text-to-top);
 }
 .b-to-top.active .slide {
   width: 56px;
@@ -9350,7 +9398,7 @@ a.b-user16:focus {
   overflow: visible;
 }
 .p-dashboards-show .b-forums > .b-link_button.maxi::after {
-  content: "Форум";
+  content: var(--text-dashboards-forum-button);
   min-width: 0;
   margin-left: -1rem;
   color: var(--color-primary) !important;
@@ -9361,9 +9409,6 @@ a.b-user16:focus {
 }
 .p-dashboards-show .b-forums > .b-link_button.maxi:active::after {
   background-color: var(--color-overlay-primary-pressed);
-}
-.p-dashboards-show[data-locale="en"] .b-forums > .b-link_button.maxi::after {
-  content: "Forum";
 }
 .p-dashboards-show .contests .contest {
   margin: 0 -0.5rem;
@@ -9792,11 +9837,8 @@ a.b-user16:focus {
   transform: scale(-1, 1);
 }
 .p-dialogs .misc-links > a::after {
-  content: "Непрочитанные начиная со старых";
+  content: var(--text-dialogs-action-check);
   color: #eee;
-}
-.p-dialogs[data-locale="en"] .misc-links > a::after {
-  content: "Unread messages from oldest one";
 }
 @media (min-width: 960px) {
   .p-dialogs-index .b-options-floated + .subheadline {
@@ -10066,11 +10108,8 @@ a.b-user16:focus {
   font-size: 0;
 }
 .p-profiles .profile-head .c-info .c-additionals b::after {
-  content: "Активность на сайте:";
+  content: var(--text-profile-additionals-label);
   font-size: 14px;
-}
-.p-profiles[data-locale="en"] .profile-head .c-info .c-additionals b::after {
-  content: "Activity:";
 }
 .p-profiles .profile-head .c-history .entry {
   position: relative;
@@ -10276,10 +10315,7 @@ a.b-user16:focus {
   content: "compare_arrows";
 }
 .b-stats_bar .compatibility a[href*="/similar/"]::after {
-  content: "Найти похожих пользователей";
-}
-[data-locale="en"] .b-stats_bar .compatibility a[href*="/similar/"]::after {
-  content: "Find similar users";
+  content: var(--text-profile-similarity-search);
 }
 .b-stats_bar .compatibility a[href^="/comparer"]::before {
   display: none;
@@ -10297,10 +10333,7 @@ a.b-user16:focus {
   content: "people_outline";
 }
 .b-stats_bar .compatibility .text:first-child.zero::after {
-  content: "Нет совместимости";
-}
-[data-locale="en"] .b-stats_bar .compatibility .text:first-child.zero::after {
-  content: "No compatibility";
+  content: var(--text-profile-similarity-zero);
 }
 .b-stats_bar .compatibility .text:first-child.weak {
   background-color: #f9fbe7;
@@ -10311,10 +10344,7 @@ a.b-user16:focus {
   color: #c0ca33 !important;
 }
 .b-stats_bar .compatibility .text:first-child.weak::after {
-  content: "Низкая совместимость";
-}
-[data-locale="en"] .b-stats_bar .compatibility .text:first-child.weak::after {
-  content: "Low compatibility";
+  content: var(--text-profile-similarity-weak);
 }
 .b-stats_bar .compatibility .text:first-child.moderate {
   background-color: #f1f8e9;
@@ -10325,10 +10355,7 @@ a.b-user16:focus {
   color: #7cb342 !important;
 }
 .b-stats_bar .compatibility .text:first-child.moderate::after {
-  content: "Средняя совместимость";
-}
-[data-locale="en"] .b-stats_bar .compatibility .text:first-child.moderate::after {
-  content: "Medium compatibility";
+  content: var(--text-profile-similarity-middle);
 }
 .b-stats_bar .compatibility .text:first-child.high {
   background-color: #e8f5e9;
@@ -10339,10 +10366,7 @@ a.b-user16:focus {
   color: #43a047 !important;
 }
 .b-stats_bar .compatibility .text:first-child.high::after {
-  content: "Высокая совместимость";
-}
-[data-locale="en"] .b-stats_bar .compatibility .text:first-child.high::after {
-  content: "High compatibility";
+  content: var(--text-profile-similarity-high);
 }
 .b-stats_bar .compatibility .text:first-child.full {
   background-color: #e1f5fe;
@@ -10353,10 +10377,7 @@ a.b-user16:focus {
   color: #039be5 !important;
 }
 .b-stats_bar .compatibility .text:first-child.full::after {
-  content: "Полная совместимость";
-}
-[data-locale="en"] .b-stats_bar .compatibility .text:first-child.full::after {
-  content: "Full compatibility";
+  content: var(--text-profile-similarity-full);
 }
 .b-stats_bar .compatibility .link-replacement {
   cursor: help;
@@ -10635,14 +10656,11 @@ a.b-user16:focus {
   line-height: 0;
 }
 .p-profiles .lifetime .title > .label::before {
-  content: "Активность";
+  content: var(--text-profile-lifetime-label);
   display: block;
   color: var(--color-text-hint);
   font-size: 0.875rem;
   line-height: 1rem;
-}
-.p-profiles[data-locale="en"] .lifetime .title > .label::before {
-  content: "Time spent";
 }
 .p-profiles .activity .title {
   display: none;
@@ -10864,19 +10882,13 @@ a.b-user16:focus {
   content: "done_all";
 }
 .p-messages .mass-actions .action:nth-child(1) > a::after {
-  content: "Прочитать всё";
+  content: var(--text-messages-action-done);
 }
 .p-messages .mass-actions .action:nth-child(2) > a::before {
   content: "delete_sweep";
 }
 .p-messages .mass-actions .action:nth-child(2) > a::after {
-  content: "Удалить всё";
-}
-.p-messages[data-locale="en"] .mass-actions .action:nth-child(1) > a::after {
-  content: "Mark all messages as read";
-}
-.p-messages[data-locale="en"] .mass-actions .action:nth-child(2) > a::after {
-  content: "Remove all messages";
+  content: var(--text-messages-action-delete);
 }
 .p-messages .l-page,
 .p-dialogs .l-page {
@@ -10956,12 +10968,9 @@ a.b-user16:focus {
   text-decoration: none;
 }
 .p-profiles-edit .account .change-password a::after {
-  content: "Изменить";
+  content: var(--text-change-button);
   vertical-align: top;
   font-size: 0.875rem;
-}
-.p-profiles-edit[data-locale="en"] .account .change-password a::after {
-  content: "Change";
 }
 .p-profiles-edit .edit_user_preferences .about-options {
   position: absolute;
